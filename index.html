@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Cara Sholat - Muhammadiyah</title>
+    <style>
+         :root {
+            --primary: #0D85CB;
+            --secondary: #f5f5f5;
+            --accent: #ffc107;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            display: flex;
+            min-height: calc(100vh - 120px);
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            background-color: white;
+            margin: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .gerakan-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gerakan-item:hover {
+            background-color: var(--secondary);
+        }
+        
+        .gerakan-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 1rem;
+        }
+        
+        .gerakan-item.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .video-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        video {
+            width: 100%;
+            display: block;
+        }
+        
+        .audio-controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        button:hover {
+            background-color: #1b5e20;
+            transform: translateY(-2px);
+        }
+        
+        .step-content {
+            background-color: var(--secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-title {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                order: 2;
+            }
+            .main-content {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tata Cara Sholat Sesuai HTP Muhammadiyah</h1>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Gerakan Sholat</h3>
+            <div class="gerakan-item active" data-video="takbiratul-ihram.mp4">
+                <img src="img/Takbir.png" alt="Takbiratul Ihram">
+                <span>Takbiratul Ihram</span>
+            </div>
+            <div class="gerakan-item" data-video="berdiri.mp4">
+                <img src="img/Bersedekap.png" alt="Berdiri">
+                <span>Berdiri</span>
+            </div>
+            <div class="gerakan-item" data-video="rukuk.mp4">
+                <img src="img/rukuk.png" alt="Rukuk">
+                <span>Rukuk</span>
+            </div>
+            <div class="gerakan-item" data-video="i'tidal.mp4">
+                <img src="img/itidal.png" alt="I'tidal">
+                <span>I'tidal</span>
+            </div>
+            <div class="gerakan-item" data-video="sujud.mp4">
+                <img src="img/Sujud.png" alt="Sujud">
+                <span>Sujud</span>
+            </div>
+            <div class="gerakan-item" data-video="duduk-antara-dua-sujud.mp4">
+                <img src="img/antara_sujud.png" alt="Duduk Antara Dua Sujud">
+                <span>Duduk Antara Dua Sujud</span>
+            </div>
+            <div class="gerakan-item" data-video="tahiyat-awal.mp4">
+                <img src="img/Tasyahud awal.png" alt="Tahiyat Awal">
+                <span>Tahiyat Awal</span>
+            </div>
+            <div class="gerakan-item" data-video="tahiyat-akhir.mp4">
+                <img src="img/tassyahud_akhir.png" alt="Tahiyat Akhir">
+                <span>Tahiyat Akhir</span>
+            </div>
+            <div class="gerakan-item" data-video="salam.mp4">
+                <img src="img/Salam.png" alt="Salam">
+                <span>Salam</span>
+            </div>
+            <footer>
+                <p>Referensi Hadits HR. Bukhari dan Muslim</p>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+            <div class="audio-controls">
+                <button id="playAdult">Putar Panduan Suara (Dewasa)</button>
+                <button id="playChild">Putar Panduan Suara (Anak-anak)</button>
+                <button id="pauseAudio">Jeda</button>
+            </div>
+
+            <div class="video-container">
+                <video id="gerakanVideo" controls>
+                    <source src="vidio/SDmuhamadiyah.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="step-content">
+                <h2 class="step-title">1. Takbiratul Ihram</h2>
+                <p>Mengangkat kedua tangan sejajar dengan telinga atau bahu sambil mengucapkan "Allahu Akbar". Kedua tangan kemudian diletakkan di bawah dada atau di atas pusar, tangan kanan di atas tangan kiri.</p>
+                <p><strong>Bacaan:</strong> "Allahu Akbar" (Allah Maha Besar)</p>
+            </div>
+
+            <div class="navigation">
+                <button id="prevBtn">Sebelumnya</button>
+                <button id="nextBtn">Selanjutnya</button>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2025 Panduan Sholat Muhammadiyah - Sistem Informasi</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const audioAdult = new Audio('audio/voicedmu.m4a');
+            const audioChild = new Audio('audio/audioanak.m4a');
+            let currentAudio = null;
+
+            const videoElement = document.getElementById('gerakanVideo');
+
+
+            const gerakanItems = document.querySelectorAll('.gerakan-item');
+
+
+            const steps = [{
+                title: "Takbiratul Ihram",
+                description: "Mengangkat kedua tangan sejajar dengan telinga atau bahu sambil mengucapkan 'Allahu Akbar'. Kedua tangan kemudian diletakkan di bawah dada atau di atas pusar, tangan kanan di atas tangan kiri.",
+                bacaan: "'Allahu Akbar' (Allah Maha Besar)",
+                video: "vidio/SDmuhamadiyah.mp4",
+                audio: audioChild
+            }, {
+                title: "Berdiri",
+                description: "Berdiri tegak menghadap kiblat dengan pandangan mata ke tempat sujud. Posisi kaki sejajar dengan bahu atau agak rapat.",
+                bacaan: `Doa Iftitah,<br>Allahumma baa‘id bainii wa baina khathaayaaya kamaa baa‘adta baina al-masyriqi wal-maghrib.<br>
+                            Allahumma naqqinii min khathaayaaya kamaa yunaqqath-thawb al-abyaḍu minad-danas.<br>
+                            Allahumma aghsilnii min khathaayaaya bits-tsalji wal-maa’i wal-barad.<br><br>
+                            Surah Al-Fatihah,<br>
+                            Bismillaahir rahmaanir rahiim ...<br>
+                            "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang."<br><br>
+                            Surah Pendek: Al-Ikhlas,<br>
+                            Qul huwallāhu aḥad. Allāhus-ṣamad. Lam yalid wa lam yūlad. Wa lam yakun lahu kufuwan aḥad.<br><br>
+                            "Katakanlah: Dialah Allah, Yang Maha Esa. Allah tempat bergantung segala sesuatu. Dia tidak beranak dan tidak pula diperanakkan. Dan tidak ada sesuatu pun yang setara dengan-Nya."`,
+                video: "vidio/SDmuhamadiyah.mp4",
+                audio: audioAdult
+            }, {
+                title: "Rukuk",
+                description: "Membungkukkan badan dengan tangan memegang lutut, punggung rata, dan kepala sejajar dengan punggung.",
+                bacaan: "Subhaanakallāhumma rabbanā wa bi hamdik. Allāhummaghfir lī<br>Maha Suci Engkau ya Allah, Tuhan kami. Segala puji bagi-Mu wahai Tuhanku. Dibaca 3 kali",
+                video: "vidio/SDmuhamadiyah.mp4"
+            }, {
+                title: "I'tidal",
+                description: "Berdiri tegak kembali setelah rukuk sambil mengangkat tangan seperti pada takbiratul ihram.",
+                bacaan: "Rabbanaa lakal hamdu mil as-samaawaati wa mil al-ardhi wa mil a maa shi ta min syai in ba'deet. Ya Tuhan kami, bagi-Mu segala puji sepenuh langit, sepenuh bumi, dan sepenuh apa saja yang Engkau kehendaki setelah itu.",
+                video: "i'tidal.mp4"
+            }, {
+                title: "Sujud",
+                description: "Meletakkan dahi, hidung, kedua telapak tangan, kedua lutut, dan kedua ujung kaki ke lantai. Punggung tetap rata dan siku tidak menempel ke lantai.",
+                bacaan: "Subhaanakallāhumma rabbanā wa bi hamdik. Allāhummaghfir lī. Maha Suci Engkau ya Allah, Tuhan kami. Segala puji bagi-Mu wahai Tuhanku. Dibaca 3 kali",
+                video: "sujud.mp4"
+            }, {
+                title: "Duduk Antara Dua Sujud",
+                description: "Duduk iftirasy (duduk di atas kaki kiri dengan kaki kanan tegak) antara dua sujud.",
+                bacaan: "Allāhumma ghfirlī, warḥamnī, wajburnī, wahdinī, warzuqnī<br>Ya Allah, ampunilah aku, rahmatilah aku, cukupkanlah (kebutuhanku), berilah aku petunjuk, dan rezekilah aku.",
+                video: "duduk-antara-dua-sujud.mp4"
+            }, {
+                title: "Tahiyat Awal",
+                description: "Duduk iftirasy pada tasyahud awal (setelah rakaat kedua pada sholat 4 rakaat).",
+                bacaan: "Attahiyyaatu lillaahi washsholawaatu waththoyyibaat.<br>Assalaamu ‘alaika ayyuhannabiyyu warohmatullaahi wabarokaatuh.<br>Assalaamu’alainaa wa’ala ‘ibaadillaahi shshoolihiin.<br>Asyhadu anlaa ilaaha illallaah waasyhadu annamuhammadan ‘abduhu warosuuluh.",
+                video: "tahiyat-awal.mp4"
+            }, {
+                title: "Tahiyat Akhir",
+                description: "Duduk tawarruk (duduk dengan kaki kiri dimasukkan ke bawah kaki kanan yang tegak) pada tasyahud akhir.",
+                bacaan: "ttahiyyaatu lillaahi washsholawaatu waththoyyibaat.<br>Assalaamu ‘alaika ayyuhan-nabiyyu wa rohmatullaahi wa barokaatuh.<br>Assalaamu ‘alainaa wa ‘alaa ‘ibaadillaahish-shoolihiin.<br>Asyhadu an laa ilaaha illallaah, wa asyhadu anna Muhammadan ‘abduhu wa rosuuluh",
+                video: "tahiyat-akhir.mp4"
+            }, {
+                title: "Salam",
+                description: "Menoleh ke kanan dan ke kiri sambil mengucapkan salam.",
+                bacaan: "Assalamu’ alaikum wa rahmatullah<br>Semoga keselamatan dan rahmat Allah tercurah atasmu",
+                video: "salam.mp4"
+            }];
+
+            let currentStep = 0;
+
+
+            document.getElementById('playAdult').addEventListener('click', function() {
+                if (currentAudio) {
+                    currentAudio.pause();
+                }
+                currentAudio = audioAdult;
+                audioAdult.play();
+            });
+
+            document.getElementById('playChild').addEventListener('click', function() {
+                if (currentAudio) {
+                    currentAudio.pause();
+                }
+                currentAudio = audioChild;
+                audioChild.play();
+            });
+
+            document.getElementById('pauseAudio').addEventListener('click', function() {
+                if (currentAudio) {
+                    currentAudio.pause();
+                }
+                videoElement.pause();
+            });
+
+
+            gerakanItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+
+                    gerakanItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+
+                    currentStep = index;
+                    updateStep();
+                });
+            });
+
+
+            prevBtn.addEventListener('click', function() {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateStep();
+                }
+            });
+
+            nextBtn.addEventListener('click', function() {
+                if (currentStep < steps.length - 1) {
+                    currentStep++;
+                    updateStep();
+                }
+            });
+
+            function updateStep() {
+                const step = steps[currentStep];
+
+
+                videoElement.src = step.video;
+
+
+                document.querySelector('.step-title').textContent = (currentStep + 1) + ". " + step.title;
+                document.querySelectorAll('.step-content p')[0].textContent = step.description;
+                document.querySelectorAll('.step-content p')[1].innerHTML = "<strong>Bacaan:</strong> " + step.bacaan;
+
+
+                videoElement.load();
+
+                if (currentAudio) {
+                    currentAudio.pause();
+                }
+                currentAudio = step.audio;
+                currentAudio.play();
+            }
+        });
+    </script>
+</body>
+
+</html>
